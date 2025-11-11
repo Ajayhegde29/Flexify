@@ -1,33 +1,11 @@
-# Node
-node_modules/
-npm-debug.log
+﻿node_modules
+**/node_modules
+dist
+**/dist
 .env
-
-# Logs
-logs
-*.log
-debug.log
-
-# Dependency directories
-/.pnp
-.pnp.js
-
-# Editor folders
-.vscode/
-.idea/
+**/*.env
+.vscode
 .DS_Store
-
-# Build output
-/dist
-/build
-
-# Java compiled files
-*.class
-*.jar
-*.war
-*.ear
-/out
-target/
-
-# System files
-Thumbs.db
+npm-debug.log*
+yarn-error.log*
+.vercel
