@@ -29,8 +29,8 @@ const server = createServer(app);
 app.use((req, res, next) => {
 	const allowedOrigins = [
     "http://localhost:5173",
-    "https://flexify-frontend-llkv.vercel.app",
-    "https://flexify-frontend-llkv-git-main-amoghs-projects-2fd6ec23.vercel.app",
+    "https://flexify-ofaz.vercel.app",
+   "https://flexify-ofaz-git-main-ajayhegde29s-projects.vercel.app",
   ];
 
 	  

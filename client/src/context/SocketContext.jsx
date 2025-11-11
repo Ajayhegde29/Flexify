@@ -15,7 +15,7 @@ export function SocketProvider({ children }) {
       const backendUrl =
         import.meta.env.VITE_SOCKET_URL ||
         import.meta.env.VITE_API_ORIGIN ||
-        "https://flexify-backend-wnsx.onrender.com";
+        "https://flexify-vr5l.onrender.com";
 
       // ✅ Connect to the backend socket
       const newSocket = io(backendUrl, {
