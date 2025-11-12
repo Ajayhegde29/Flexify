@@ -27,15 +27,32 @@ const server = createServer(app);
 
 // ✅ FIX 1: CORS middleware — must run BEFORE json/body parsing
 app.use((req, res, next) => {
-	const allowedOrigins = [
+	const staticAllowedOrigins = [
     "http://localhost:5173",
     "https://flexify-ofaz.vercel.app",
-   "https://flexify-ofaz-git-main-ajayhegde29s-projects.vercel.app",
+    "https://flexify-ofaz-git-main-ajayhegde29s-projects.vercel.app",
   ];
 
-	  
+  const dynamicAllowedOrigins = (process.env.ALLOWED_ORIGINS || "")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+
+  const allowedOrigins = [...staticAllowedOrigins, ...dynamicAllowedOrigins];
+
+  const vercelPreviewPrefixes = [
+    "https://flexify-ofaz-",
+  ];
+
   const origin = req.headers.origin;
-  if (origin && allowedOrigins.includes(origin)) {
+  const isAllowedOrigin =
+    !!origin &&
+    (allowedOrigins.includes(origin) ||
+      vercelPreviewPrefixes.some(
+        (prefix) => origin.startsWith(prefix) && origin.endsWith(".vercel.app"),
+      ));
+
+  if (isAllowedOrigin && origin) {
     res.setHeader("Access-Control-Allow-Origin", origin);
   }
 
