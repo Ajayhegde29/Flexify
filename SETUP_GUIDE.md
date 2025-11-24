@@ -1,6 +1,6 @@
 # Flexify - On-Demand Job Hiring Platform Setup Guide
 
-## 🚀 Quick Start
+## 🚀 Quick End
 
 ### Prerequisites
 - Node.js (v16 or higher)
