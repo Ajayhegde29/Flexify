@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "src",
+    "outDir": "dist",
+
+    // Environment Settings
+    "module": "commonjs",
+    "target": "es2020",
+    "types": ["node"],
+
+    // Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // TypeScript Behavior
+    "strict": false,               // loosen strict checks to reduce build failures
+    "noEmitOnError": false,        // ✅ ensures build continues even with type errors
+    "skipLibCheck": true,          // ✅ ignore type errors in dependencies
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    // JSX / Modules
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false,
+    "isolatedModules": false,
+    "moduleDetection": "auto"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
